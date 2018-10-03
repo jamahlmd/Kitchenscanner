@@ -1,12 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, View, Button } from 'react-native';
 
 const App = (props) => (
     <View style={styles.container}>
         <View style={styles.buttonContainer}>
             <Button
                 title="Instellingen"
-                onPress={() => props.navigation.navigate('PasswordCheck')}
+                onPress={() => props.navigation.navigate('ExpoCamera')}
                 color="#4C4CFF"
             />
             <Button

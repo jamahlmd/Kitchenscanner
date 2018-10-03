@@ -4,7 +4,7 @@ import PasswordCheck from './components/PasswordCheck';
 import Handheld from './components/Handheld';
 import Scanner from './components/Scanner';
 import Settings from './components/Settings';
-import Tester from './components/Tester';
+import ExpoCamera from './components/ExpoCamera';
 
 import { createStackNavigator } from 'react-navigation';
 
@@ -15,5 +15,5 @@ export default nav = createStackNavigator({
     Handheld: { screen: Handheld},
     Scanner: { screen: Scanner},
     Settings: { screen: Settings},
-    Tester: {screen: Tester}
+    ExpoCamera: {screen: ExpoCamera}
 });

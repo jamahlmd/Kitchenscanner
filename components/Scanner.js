@@ -14,13 +14,11 @@ class Scanner extends React.Component {
     //om een andere foto door de api te halen
     handleFetchData = () => {
 
-        const url = this.state.uriBase;
-
         const data = {
             "url": this.state.photoURL
         };
 
-        fetch(url, {
+        fetch(this.state.uriBase, {
             method: 'POST',
             body: JSON.stringify(data),
             headers:{
