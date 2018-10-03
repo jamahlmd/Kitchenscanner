@@ -6,7 +6,7 @@ const App = (props) => (
         <View style={styles.buttonContainer}>
             <Button
                 title="Instellingen"
-                onPress={() => props.navigation.navigate('ExpoCamera')}
+                onPress={() => props.navigation.navigate('PasswordCheck')}
                 color="#4C4CFF"
             />
             <Button
@@ -19,7 +19,7 @@ const App = (props) => (
             <View>
                 <Button
                     title="Scan"
-                    onPress={() => props.navigation.navigate('Scanner')}
+                    onPress={() => props.navigation.navigate('ExpoCamera')}
                     color='rgb(255,192,76)'
                 />
             </View>

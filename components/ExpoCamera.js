@@ -6,8 +6,7 @@ class ExpoCamera extends React.Component {
     state = {
         hasCameraPermission: null,
         type: Camera.Constants.Type.front,
-        uri:'',
-        photoURL: 'https://hollandwinkel-nl-dehollandwinkel.netdna-ssl.com/media/catalog/product/cache/1/image/380x/1beeb78083d745754856f87600e894a9/m/o/mokhop2.jpg',
+        uri: '',
         key: 'ea833cbfc1134749af6f6eccebad2eef',
         uriBase: 'https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Categories%2CDescription%2CColor&details=&language=en',
         tags: [],
@@ -19,23 +18,21 @@ class ExpoCamera extends React.Component {
         this.setState({ hasCameraPermission: status === 'granted' });
         setTimeout(
             this.snap,
-            5000
+            2000
         );
     }
 
-    //Zoekt de tags van de foto die in this.state.photoURL staat. Verander this.state.photoURL
-    //om een andere foto door de api te halen
     handleFetchData = () => {
 
-        const data = {
-            "url": this.state.uri
-        };
+        const data = this.state.uri;
+
+
 
         fetch(this.state.uriBase, {
             method: 'POST',
             body: JSON.stringify(data),
             headers:{
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/octet-stream',//multipart/form-data - application/octet-stream
                 'Ocp-Apim-Subscription-Key': this.state.key
             }
         }).then(res => res.json())
@@ -65,7 +62,7 @@ class ExpoCamera extends React.Component {
     };
 
     render() {
-        console.log(this.state.uri);
+        // console.log(this.state.uri);
 
         return (
             <View style={{ flex: 1 }}>
@@ -79,12 +76,19 @@ class ExpoCamera extends React.Component {
                             flexDirection: 'row',
                         }}>
                     </View>
-                    <Image
-                        style={{
-                            flex: 1,
-                        }}
-                        source={{ uri: this.state.uri }}
-                    />
+
+                    DIT IS PUUR VOOR TEST OM TE CHECKEN OF IE WEL DE FOTO MAAKT
+                    {
+                        this.state.uri && (
+                            <Image
+                                style={{
+                                    flex: 1,
+                                }}
+                                source={{ uri: this.state.uri}}
+                            />
+                        )
+                    }
+
                 </Camera>
             </View>
         )
