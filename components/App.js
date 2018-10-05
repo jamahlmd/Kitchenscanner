@@ -1,8 +1,9 @@
 import React from "react";
-import { StyleSheet, View, Button } from 'react-native';
+import {View, Button } from 'react-native';
+import styles from '../style';
 
 const App = (props) => (
-    <View style={styles.container}>
+    <View style={styles.container} className="test">
         <View style={styles.buttonContainer}>
             <Button
                 title="Instellingen"
@@ -35,22 +36,6 @@ App.navigationOptions = {
 
 
 
-const styles = StyleSheet.create({
-    container: {
-        paddingTop: 30,
-        flex: 1,
-        backgroundColor: '#9999FF'
-    },
-    buttonContainer:{
-        flexDirection: 'row',
-        justifyContent: 'space-around'
-    },
-    bodyContainer:{
-        flex:1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
-});
 
 
 export default App;

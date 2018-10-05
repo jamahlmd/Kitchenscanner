@@ -82,7 +82,6 @@ class ExpoCamera extends React.Component {
                         }}>
                     </View>
 
-                    DIT IS PUUR VOOR TEST OM TE CHECKEN OF IE WEL DE FOTO MAAKT
                     {
                         this.state.uri && (
                             <Image
